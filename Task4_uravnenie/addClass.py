@@ -30,9 +30,6 @@ class ExecModule:
     def CreatString(this):
         this.string = ""
 
-        # if this.arrKoeff[len(this.arrKoeff) - 1] == 0: lenKoef = len(this.arrKoeff) - 1
-        # else: lenKoef = len(this.arrKoeff)
-
         for i in range(len(this.arrKoeff)):
             if this.arrKoeff[i] == 0: continue
             this.string += str(this.arrKoeff[i])
@@ -41,13 +38,11 @@ class ExecModule:
                 this.string += this.znaki[j]
 
             this.string = this.string.replace("i", str(len(this.arrKoeff) - i - 1))
-        
-            
+
         this.string = this.string[:-7] + " = 0"    
         this.string = this.string.replace("^1", "")
         this.string = this.string.replace("1*", "")
-        #this.string = this.string[:-4] + " = 0"
-        #this.string = this.string + " = 0"
+
         print(this.string)
 
     def PushToFile(this):
