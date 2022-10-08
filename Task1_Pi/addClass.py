@@ -26,10 +26,10 @@ class ExecModule:
         this.FindN()
 
     def FindN(this):
-        while this.D < 1:
+        while this.D < 10:
             this.N += 1
             this.D = this.FindPi(this.D)()
-        print(f"Число пи с заданной точностью: {this.piD}")
+        print(f"Число пи с заданной точностью: {str(this.piD)[:-1]}")
 
     def FindPi(this, d):
         this.piD = round(pi, this.N)
