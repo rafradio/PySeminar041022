@@ -15,6 +15,7 @@ class ExecModule:
         this.FindSum()
         print(this.koeff)
         print("Сумма равна: ", this.sum)
+        this.PushToFile()
 
     def FindFiles(this):
         for i in range(2):
@@ -56,7 +57,17 @@ class ExecModule:
         for i in this.koeff:
             this.sum += int(i)
 
-        
+    def PushToFile(this):
+        inputString = "File sum: " + str(this.sum)
+        try:
+            f = open("myfileSum.txt", "x")
+            f.write(inputString)
+            f.close()
+        except:
+            f = open("myfileSum.txt", "w")
+            f.write(inputString)
+            f.close()
+            print("Файл уже существует") 
             
         # if isinstance(num, int):
         #     print("hello raf")
